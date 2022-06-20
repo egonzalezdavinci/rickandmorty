@@ -130,6 +130,9 @@ header{
     flex-direction: column;
     box-sizing: border-box;
 }
+.main_buscador div{
+    text-align: center;
+}
 
 .main_buscador div h1{
 	font-size: 0;
