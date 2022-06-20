@@ -28,6 +28,11 @@ header{
     padding: 20px;
 }
 
+.content_btn-burger{
+    max-width: 200px;
+    width: 100%;
+}
+
 .content_nav {
     position: fixed;
     left: -360px;
