@@ -73,17 +73,27 @@ header{
 }
 
 .main_buscador{
+    max-width: 600px;
 	width:100%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding: 20px 20px;
 	display: flex;
     flex-wrap: nowrap;
     align-content: space-around;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+    box-sizing: border-box;
 }
 
 .main_buscador div h1{
 	font-size: 0;
+}
+
+.main_buscador div img{
+    max-width: 578px;
+    width: 100%;
 }
 
 .card{
@@ -93,4 +103,12 @@ header{
 
 .card-title{
 	font-size:1.325rem;
+}
+
+.guardarPeronaje{
+    height: 46px;
+    border-radius: 3px;
+    background-color: #0eafc4;
+    color: #fff;
+    border: 2px solid #083745;
 }
