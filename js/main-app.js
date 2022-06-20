@@ -1,19 +1,26 @@
+let input_buscador = document.getElementById('buscador');
+let btn_buscador = document.querySelector('.buscar_btn');
+let content_buscador = document.querySelector('.main_buscador');
+let tagBodyMensaje = document.getElementsByTagName('body')[0];
+let messageOffline = '';
+
 window.addEventListener('offline', event => {
     console.log('Estoy Offline!!');
-    alert("No te pusidte conectar");
+    messageOffline = `<div class="alert alert-danger" role="alert">Sin conexión</div>`;
+    tagBodyMensaje.appendChild.(messageOffline);
+
 })
 window.addEventListener('online', event => {
     console.log('Estoy online!!');
+    messageOffline = '';
 })
 if (!navigator.onLine){
     console.log('Estoy sin conexion, rey!');
     alert("No estas conectado");
+    messageOffline = `<div class="alert alert-danger" role="alert">Sin conexión</div>`;
+    tagBodyMensaje.appendChild.(messageOffline);
 
 }
-
-let input_buscador = document.getElementById('buscador');
-let btn_buscador = document.querySelector('.buscar_btn');
-let content_buscador = document.querySelector('.main_buscador');
 
 let aFavoritos = {
 	id:[],
