@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/estilos.css" />
+	<link rel="manifest" href="manifest.json" />
+	<title>Los simpson - Elias Gonzalez - DW3TNA</title>
+</head>
+<body>
+	<header>
+        <nav>
+		<div class="menu_principal">
+        	<div class="content_header">
+            	<div class="content_btn-burger">
+                	<div id="menu-open"><img src="imagenes/btn.png" alt="Menú abrir"></div>
+                	<div id="menu-closed"><img src="imagenes/btn_closed.png" alt="Menú cerrar"></div>
+            	</div>
+        	</div>
+        	<div class="content_nav">
+                <ul class="border-box">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="favoritos.html">Favoritos</a></li>
+                    <li><a href="#">Capitulos</a></li>
+                </ul>
+        	</div>
+    	</div>
+		</nav>
+	</header>
+	<main>
+		<section class="main_buscador">
+		<div>
+            <h1>App Los simpson</h1>
+            <img src="imagenes/rosquilla.png" alt="Rosquilla, los simpson!">
+        </div>
+		<div class="buscador">
+			<label for="buscador">Buscá tú personaje</label>
+			<input type="search" name="buscador" id="buscador" />
+			<button class="buscar_btn" >Buscar</button>
+		</div>
+		</section>
+		<section>
+		<article id="contentResultado" class="container">
+			<div class="row" id="contentPersonaje">
+
+			</div>
+		</article>
+		</section>
+	</main>
+
+<script type="text/javascript" src="js/menuMobile.js"></script>
+<script type="text/javascript" src="js/main-app.js"></script>
+<script type="text/javascript" src="js/register-service_worker.js"></script>
+
+</body>
+</html>
