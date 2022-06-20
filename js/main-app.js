@@ -1,11 +1,14 @@
 window.addEventListener('offline', event => {
     console.log('Estoy Offline!!');
+    alert("No te pusidte conectar");
 })
 window.addEventListener('online', event => {
     console.log('Estoy online!!');
 })
 if (!navigator.onLine){
     console.log('Estoy sin conexion, rey!');
+    alert("No estas conectado");
+
 }
 
 let input_buscador = document.getElementById('buscador');
