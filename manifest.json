@@ -1,12 +1,12 @@
 {
-    "theme_color": "#ffd800",
-    "background_color": "#1e73be",
+    "theme_color": "#6ec7e9",
+    "background_color": "#000000",
     "display": "standalone",
     "scope": "/",
     "start_url": "/index.html",
-    "name": "Los Simpson",
-    "short_name": "Los Simpson",
-    "description": "Busca los personajes de Los Simpson",
+    "name": "Rick And Morty",
+    "short_name": "R&M",
+    "description": "Busca informaci\u00f3n de los personajes de la serie de Rick And Morty",
     "icons": [
         {
             "src": "imagenes/icon_manifest/icon-192x192.png",
