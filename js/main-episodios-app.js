@@ -77,15 +77,14 @@ function mostrarPersonajes(json){
 		cardPerdonaje += `
 		<div class="col-sm-3">
 				<div class="card">
-				  <div class="card-body">
-					<h2 class="card-title">${a[i].name}</h2>
-					<p class="card-text">${a[i].episode}</p>
-					<p class="card-text">${a[i].created}</p>
-					<p class="card-text">${a[i].air_date}</p>
-				  </div>
-				</div>
-			</div>`;
+  					<div class="card-header">${a[i].name}</div>
+  					<div class="card-body">
+    				<h3 class="card-title">${a[i].episode}</h3>
+    				<p class="card-text">${a[i].created}</p>
+    				<p class="card-text">${a[i].air_date}</p>
+    				</div>
+  				</div>
+		</div>`;
 		mostrarContenidoCard.innerHTML = `${cardPerdonaje}`;
-
 	}
 }

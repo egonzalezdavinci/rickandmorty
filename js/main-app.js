@@ -88,11 +88,11 @@ function mostrarPersonajes(json){
 				<div class="card">
 				  <div class="card-body">
 				    <img src="${a[i].image}" alt="${a[i].name}" class="card-img-top">
-					<h2 class="card-title">${a[i].name}</h2>
-					<p class="card-text">Especie: ${a[i].species}</p>
-					<p class="card-text">Genero: ${a[i].gender}</p>
+					<h2 class="card-title mb-1">${a[i].name}</h2>
+					<p class="card-text mb-1">Especie: ${a[i].species}</p>
+					<p class="card-text mb-1">Genero: ${a[i].gender}</p>
 					<p class="card-text">Estado: ${a[i].status}</p>
-					<button class="guardarPeronaje" data-cod="${a[i].id}" class="btn btn-primary">Guardar</button>
+					<button class="guardarPeronaje" data-cod="${a[i].id}" >Guardar</button>
 				  </div>
 				</div>
 			</div>`;
@@ -106,38 +106,45 @@ function mostrarPersonajes(json){
 	for(i of cards){
 
 			i.onclick = function(){
+
 				let saveCod = this.dataset.cod;
 				
 				//preguntar si esxiste en el localStorage
 				for(s = 0; s < aFavoritos.id.length; s++) {
 					if(aFavoritos.id[s] == saveCod){
-						alert('ya esta guardado');
+
+						aFavoritos.id.splice(s,1);
+						aFavoritos.genero.splice(s,1);
+						aFavoritos.nombre.splice(s,1);
+						aFavoritos.imagen.splice(s,1);
+						aFavoritos.especie.splice(s,1);	
+
+						localStorage.aFavoritos = JSON.stringify(aFavoritos);
+						this.className = "guardarPeronaje";
+						this.innerHTML = "Guardar";
 						return;
-					}else{
-						alert('Podes guardarlo');
 					}
 				}
 				
-				for(i = 0; i < a.length; i++) {
-					if( saveCod == a[i].id){
+				for(j = 0; j < a.length; j++) {
+					if( saveCod == a[j].id){
 						
 						console.log(saveCod);
-						console.log(a[i].id);
+						console.log(a[j].id);
 						
 						aFavoritos.id.push(saveCod);
-						aFavoritos.genero.push(a[i].gender);
-						aFavoritos.nombre.push(a[i].name);
-						aFavoritos.imagen.push(a[i].image);
-						aFavoritos.especie.push(a[i].species);	
+						aFavoritos.genero.push(a[j].gender);
+						aFavoritos.nombre.push(a[j].name);
+						aFavoritos.imagen.push(a[j].image);
+						aFavoritos.especie.push(a[j].species);	
 
 						localStorage.aFavoritos = JSON.stringify(aFavoritos);
 						
 					}
 				}
-				
-				
-				
-				
+				this.className = "guardarPeronaje desabilitado";
+				this.innerHTML = "Quitar";
+	
 			}
 	};
 

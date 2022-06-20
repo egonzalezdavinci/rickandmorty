@@ -26,10 +26,10 @@ function mostrarFavoritos(){
 				<div class="card">
 				  <div class="card-body">
 				    <img src="${aFavoritos.imagen[i]}" alt="${aFavoritos.nombre[i]}" class="card-img-top">
-					<h2 class="card-title">${aFavoritos.nombre[i]}</h2>
-					<p class="card-text">${aFavoritos.especie[i]}</p>
+					<h2 class="card-title mb-1">${aFavoritos.nombre[i]}</h2>
+					<p class="card-text mb-1">${aFavoritos.especie[i]}</p>
 					<p class="card-text">${aFavoritos.genero[i]}</p>
-					<button class="quitarPeronaje" data-cod="${aFavoritos.id[i]}" class="btn btn-primary">Quitar</button>
+					<button data-cod="${aFavoritos.id[i]}" class="quitarPeronaje">Quitar</button>
 				  </div>
 				</div>
 			</div>`;
