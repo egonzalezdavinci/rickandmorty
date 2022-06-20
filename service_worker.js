@@ -1,4 +1,4 @@
-const CACHE = "version3";
+const CACHE = "version4";
 
 importScripts(
   "https://storage.googleapis.com/workbox-cdn/releases/5.0.0/workbox-sw.js"
