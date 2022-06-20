@@ -1,26 +1,6 @@
 let input_buscador = document.getElementById('buscador');
 let btn_buscador = document.querySelector('.buscar_btn');
 let content_buscador = document.querySelector('.main_buscador');
-let tagBodyMensaje = document.getElementsByTagName('body')[0];
-let messageOffline = '';
-
-window.addEventListener('offline', event => {
-    console.log('Estoy Offline!!');
-    messageOffline = `<div class="alert alert-danger" role="alert">Sin conexión</div>`;
-    tagBodyMensaje.appendChild.(messageOffline);
-
-})
-window.addEventListener('online', event => {
-    console.log('Estoy online!!');
-    messageOffline = '';
-})
-if (!navigator.onLine){
-    console.log('Estoy sin conexion, rey!');
-    alert("No estas conectado");
-    messageOffline = `<div class="alert alert-danger" role="alert">Sin conexión</div>`;
-    tagBodyMensaje.appendChild.(messageOffline);
-
-}
 
 let aFavoritos = {
 	id:[],
@@ -91,7 +71,7 @@ function mostrarPersonajes(json){
 	let cardPerdonaje = '';
 	
 		for (i = 0; i < a.length; i++) {
-		
+		let existePersonaje = 0;
 		console.log(a[i].name);
 		cardPerdonaje += `
 		<div class="col-sm-3">
@@ -101,11 +81,26 @@ function mostrarPersonajes(json){
 					<h2 class="card-title mb-1">${a[i].name}</h2>
 					<p class="card-text mb-1">Especie: ${a[i].species}</p>
 					<p class="card-text mb-1">Genero: ${a[i].gender}</p>
-					<p class="card-text">Estado: ${a[i].status}</p>
-					<button class="guardarPeronaje" data-cod="${a[i].id}" >Guardar</button>
-				  </div>
-				</div>
-			</div>`;
+					<p class="card-text">Estado: ${a[i].status}</p>`;
+		//preguntar si existe, si es asi cambiar el botón
+		for(s = 0; s < aFavoritos.id.length; s++) {
+					if(aFavoritos.id[s] == a[i].id){
+						existePersonaje = 1;
+						console.log(aFavoritos.id[s]);
+						console.log(a[i].id);
+					}
+			}
+
+			if(existePersonaje == 0){
+				cardPerdonaje += `<button class="guardarPeronaje" data-cod="${a[i].id}" >Guardar</button>`;
+			}else{
+				cardPerdonaje += `<button class="guardarPeronaje" data-cod="${a[i].id}" >Quitar</button>`;
+			}
+
+		cardPerdonaje +=`</div>
+				   </div>
+			     </div>`;
+
 		mostrarContenidoCard.innerHTML = `${cardPerdonaje}`;
 
 	}

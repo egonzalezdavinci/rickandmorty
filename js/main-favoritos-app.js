@@ -44,7 +44,6 @@ let cards = document.querySelectorAll('.quitarPeronaje');
 
 			i.onclick = function(){
 				let saveCod = this.dataset.cod;
-				alert(saveCod);
 				
 				for (s = 0; s < aFavoritos.id.length; s++) {
 					
@@ -59,7 +58,7 @@ let cards = document.querySelectorAll('.quitarPeronaje');
 						let nodoPadre = this.parentNode;
 						let nodoAbu = nodoPadre.parentNode;
 						let nodoBisa = nodoAbu.parentNode;
-							nodoBisa.remove();
+						nodoBisa.remove();
 
 						localStorage.aFavoritos = JSON.stringify(aFavoritos);
 						
