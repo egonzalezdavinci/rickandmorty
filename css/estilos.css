@@ -3,7 +3,7 @@
     --colorPrimario: #ffd800;
     --colorSecundario: #289bad;
     --colorTerciario: #499538;
-    --varianteBlanco: #fff ;
+    --varianteBlanco: #fff;
     --colorNegro: #000;
 }
 
@@ -200,6 +200,7 @@ header{
 
 .contentMessage{
     position: fixed;
+    z-index: 20;
     top: 20px;
     width: 100%;
 }
