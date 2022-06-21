@@ -202,13 +202,26 @@ header{
     position: fixed;
     z-index: 20;
     top: 20px;
-    width: 100%;
+    width: 100vw;
 }
 .contentMessage div.alert.alert-danger{
-max-width: 650px;
-    width: 100%;
+    max-width: 650px;
+    width: 90%;
     display: block;
     margin: 0 auto;
+}
+
+.contentSpinner{
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.contentSpinner img.spinner{
+    max-width: 350px;
+    width: 100%;
+    border-radius: 12px;
 }
 
 @media only screen and (max-width: 640px){

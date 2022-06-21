@@ -1,6 +1,15 @@
 let input_buscador = document.getElementById('buscador');
 let btn_buscador = document.querySelector('.buscar_btn');
 let content_buscador = document.querySelector('.main_buscador');
+let mostrarContenidoCard = document.getElementById('contentPersonaje');
+let contentSpinner = document.createElement('div');
+	contentSpinner.className = 'contentSpinner';
+let spinner = document.createElement('img');
+	spinner.src = 'imagenes/spinner.gif';
+	spinner.alt = 'Cargando ...';
+	spinner.className = 'spinner';
+
+
 
 let aFavoritos = {
 	id:[],
@@ -15,10 +24,6 @@ if (localStorage.aFavoritos) {
 } else {
     localStorage.aFavoritos = JSON.stringify(aFavoritos);
 }
-
-let mostrarContenidoCard = document.getElementById('contentPersonaje');
-
-const APIMORTY = 'https://rickandmortyapi.com/graphql';
 
 const queryMortyAndMarty = (contenido) => `query{
   characters(filter: { name: "${contenido}" }) {
@@ -37,6 +42,10 @@ const queryMortyAndMarty = (contenido) => `query{
 }`
 
 btn_buscador.addEventListener('click', ()=>{
+	mostrarContenidoCard.innerHTML = ``;
+	mostrarContenidoCard.appendChild(contentSpinner);
+	contentSpinner.appendChild(spinner);
+
     let contenido = input_buscador.value;
 
     const option = {
@@ -69,6 +78,9 @@ function mostrarPersonajes(json){
 	let a = json.characters.results;
 	console.log(json);
 	let cardPerdonaje = '';
+	contentSpinner.removeChild(spinner);
+	mostrarContenidoCard.removeChild(contentSpinner);
+	
 	
 		for (i = 0; i < a.length; i++) {
 		let existePersonaje = 0;
