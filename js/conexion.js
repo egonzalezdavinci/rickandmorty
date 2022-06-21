@@ -21,7 +21,6 @@ window.addEventListener('online', event => {
 
 if (!navigator.onLine){
     console.log('Estoy sin conexion, rey!');
-    alert("No estas conectado");
     contentMessageOffline.className = 'contentMessage';
     tagBodyMensaje.appendChild(contentMessageOffline);
     contentMessageOffline.appendChild(messageOffline);
