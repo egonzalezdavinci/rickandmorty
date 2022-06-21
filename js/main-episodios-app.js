@@ -62,7 +62,6 @@ btn_buscador.addEventListener('click', ()=>{
 			return response.json();
     }).then(function(json){
 		
-        //mostrarContenidoCard.innerHTML = JSON.stringify(json.data);
 		mostrarPersonajes(json.data);
     }).finally(function(){
         //poner un loading
